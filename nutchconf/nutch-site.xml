@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<property>
+  <name>plugin.folders</name>
+  <value>plugins</value>
+  <description>Directories where nutch plugins are located.  Each
+  element may be a relative or absolute path.  If absolute, it is used
+  as is.  If relative, it is searched for on the classpath.</description>
+</property>
+
+<property>
+      <name>plugin.includes</name>
+      <value>protocol-file|urlfilter-(regex|incrementalCrawl)|parse-(html|tika)</value>
+</property>
+
+<property>
+  <name>http.agent.name</name>
+  <value>test</value>
+  <description>HTTP 'User-Agent' request header. MUST NOT be empty -
+  please set this to a single word uniquely related to your organization.
+
+  NOTE: You should also check other related properties:
+
+        http.robots.agents
+        http.agent.description
+        http.agent.url
+        http.agent.email
+        http.agent.version
+
+  and set their values appropriately.
+
+  </description>
+</property>
+
+<property>
+  <name>db.ignore.internal.links</name>
+  <value>false</value>
+  <description>If true, when adding new links to a page, links from
+  the same host are ignored.  This is an effective way to limit the
+  size of the link database, keeping only the highest quality
+  links.
+  </description>
+</property>
+
+<property>
+<name>file.content.limit</name>
+<value>-1</value>
+</property>
+
+<property>
+  <name>fetcher.verbose</name>
+  <value>true</value>
+  <description>If true, fetcher will log more verbosely.</description>
+</property>
+
+<property>
+<name>fetcher.threads.fetch</name>
+<value>10</value>
+<description>The number of FetcherThreads the fetcher should use.
+This is also determines the maximum number of requests that are
+made at once (each FetcherThread handles one connection).</description>
+</property>
+
+<property>
+<name>fetcher.threads.per.host</name>
+<value>10</value>
+<description>This number is the maximum number of threads that
+should be allowed to access a host at one time.</description>
+</property>
+
+<property>
+  <name>file.crawl.parent</name>
+  <value>false</value>
+  <description>The crawler is not restricted to the directories that you specified in the
+    Urls file but it is jumping into the parent directories as well. For your own crawlings you can
+    change this bahavior (set to false) the way that only directories beneath the directories that you specify get
+    crawled.</description>
+</property>
+
+<property>
+  <name>fetcher.threads.per.queue</name>
+  <value>1</value>
+  <description>This number is the maximum number of threads that
+    should be allowed to access a queue at one time. Replaces 
+    deprecated parameter 'fetcher.threads.per.host'.
+   </description>
+</property>
+
+<property>
+ <name>fetcher.max.crawl.delay</name>
+ <value>-1</value>
+ <description>
+ If the Crawl-Delay in robots.txt is set to greater than this value (in
+ seconds) then the fetcher will skip this page, generating an error report.
+ If set to -1 the fetcher will never skip such pages and will wait the
+ amount of time retrieved from robots.txt Crawl-Delay, however long that
+ might be.
+ </description>
+</property>
+
+<property>
+  <name>generate.max.count</name>
+  <value>-1</value>
+  <description>The maximum number of urls in a single
+  fetchlist.  -1 if unlimited. The urls are counted according
+  to the value of the parameter generator.count.mode.
+   </description>
+</property>
+<property>
+ <name>fetcher.max.crawl.delay</name>
+ <value>-1</value>
+ <description>
+ If the Crawl-Delay in robots.txt is set to greater than this value (in
+ seconds) then the fetcher will skip this page, generating an error report.
+ If set to -1 the fetcher will n1ever skip such pages and will wait the
+ amount of time retrieved from robots.txt Crawl-Delay, however long that
+ might be.
+ </description>
+</property>
+<property>
+  <name>fetcher.server.delay</name>
+  <value>0</value>
+  <description>The number of seconds the fetcher will delay between 
+   successive requests to the same server.</description>
+</property>
+<property>
+  <name>fetcher.store.content</name>
+  <value>true</value>
+  <description>If true, fetcher will store content.</description>
+</property>
+</configuration>
